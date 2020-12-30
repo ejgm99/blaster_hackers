@@ -1,0 +1,5 @@
+{% include 'template.html' %}
+
+<div class="container" ><p> this page gives out csrf tokens for free lol</p> </div>
+<!-- this line is needed for uploads to occur -->
+<form method="post">{% csrf_token %}

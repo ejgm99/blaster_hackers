@@ -1,0 +1,15 @@
+<div class="container text-light">
+<h1>{{type}}</h1>
+
+{% if items %}
+    <ul>
+    {% for item in items %}
+        <li >  <a href = "/inventory/{{ item.id }} ">
+        	{{item.title}}
+       </a>  </li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>No items are available.</p>
+{% endif %}
+</div>

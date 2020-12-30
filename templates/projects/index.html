@@ -1,0 +1,33 @@
+{% include 'template.html' %}
+<h2> </h2>
+ {% load static %}
+
+<div class="container text-light">
+<h1> Projects </h1>
+
+
+{% if projects %}
+    <ul>
+    {% for project in projects %}
+
+        <div class = "row">
+
+            <div class = "col-sm-1 col-md-3">
+            <a href = "/projects/{{ project.id }}/ ">
+            <img src = "{{ project.img.url }}" class="rounded float-left" width = "150" height="100"> </img>
+            </a>
+            </div>
+
+            <div class = "col-sm-11 col-md-9">
+            <a href = "{{ project.id }}/ ">  {{project.title}}  </a>
+            <p> {{project.description | safe}}</p>
+            </div>
+       </div>
+
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>No projects are available.</p>
+{% endif %}
+
+</div>

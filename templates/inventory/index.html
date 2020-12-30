@@ -1,0 +1,17 @@
+{% include 'template.html' %}
+
+<div class="container text-light">
+<h1>Inventory</h1>
+
+{% if types %}
+    <ul>
+    {% for type in types %}
+        <li >  <a href = "/inventory/type{{ type.id }} ">
+        	{{type.title}}
+       </a>  </li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>No types are available.</p>
+{% endif %}
+</div>
