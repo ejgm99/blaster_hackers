@@ -23,7 +23,7 @@ def project(request, project_id): #displays a project depending on id number giv
 		project = Project.objects.get(pk=project_id)
 		steps = Step.objects.filter(projectID = project_id)
 		components = Component.objects.filter(projectID = project_id)
-		image_url ="hoho" #gets image based on what project has been loaded
+		image_url =project.img #gets image based on what project has been loaded
 	except Project.DoesNotExist:
 		raise Http404("Project Does Not Exist")
 	return render(request, 'projects/project.html', {'project': project, 'url':image_url, 'steps' : steps, 'components':components})

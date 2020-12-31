@@ -17,13 +17,28 @@ def getContentData(j):
     id = getProjectID(project)  #
     if project ==title: #this means it's the introduction for the particular project
         # print("--------Updating description for: ", project)
-        Project.objects.filter(title=project).update(description=description)
+        src, description =extractSourceImageFromDescription(description)
+        Project.objects.filter(title=project).update(description=description,img=src)
         # print("yooooooooo")
         # print(Project.objects.get(title=project).description)
         return False
     else: #it's the project
         #print("----Uploading to project ID:", id)
         return ['',title, id, description]
+
+testDescription = '<br /> <img src="https://lh3.googleusercontent.com/FPOicDDyHstzWLntAc90NspocZDywa4wLXalfHV-ItayAfBRwC5_Y0HIN36Rubr970bUFnj3Q2VLEouJUP5khgHx_Z1bTzLUxpxvLfS3UfHPZ02B1ni3Vs0DcdtAmsJVaTN_nt-U" class="center" style="width: 624.00px; height: 468.00px; margin-left: 0.00px; margin-top: 0.00px; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px);"><br />'
+
+def extractSourceImageFromDescription(description):
+    elementArray = description.split('>')
+    cleanedDescription = ""
+    sourceArray = []
+    for e in elementArray:
+        if e.find("img")==-1:
+            cleanedDescription = cleanedDescription+e+'>'
+        if e.find("img")!=-1:
+            sourceArray = sourceArray+[e.split(" ")[2].split('"')[1]]
+    return sourceArray[0], cleanedDescription[:-1]
+
 
 def getProjectID(project): #returns id of component the project is for, if it doesn't have one it creates one
     try:
