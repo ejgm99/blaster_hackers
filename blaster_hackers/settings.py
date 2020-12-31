@@ -25,7 +25,7 @@ SECRET_KEY = '#hrzwz7-50_flu4se%eehqz^vh=j_bms$53y_q+f3t99^mox1n'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['blasterhackers.com', 'www.blasterhackers.com', '127.0.0.1','ec2-18-191-112-106.us-east-2.compute.amazonaws.com']
 
 
 # Application definition
@@ -39,8 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'apps.inventory',
     'apps.projects',
-    'apps.uploads',
-    'apps.skills'
+    'apps.uploads'
 ]
 
 MIDDLEWARE = [
