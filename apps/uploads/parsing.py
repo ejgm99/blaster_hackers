@@ -64,3 +64,15 @@ def parseProjectContent(data):
     print("Parsing data", type(data))
     data = getContentData(data)
     return data
+
+def getItemData(data):
+    data = json.loads(data['d'])
+    for item in data:
+        name = item['name']
+        quantity=item['quantity']
+        link = item['link']
+        print(name,quantity,link)
+
+def parseInventoryContent(data):
+    data = getItemData(data)
+    return data
