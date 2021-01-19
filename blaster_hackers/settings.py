@@ -80,23 +80,23 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-    },
-
-    'postgres' : {
-
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-
-        'NAME': 'postgres',
-
-        'USER': 'postgres',
-
-        'PASSWORD': 'youarewhatyouyeet',
-
-        'HOST': 'bh.cmmlqfmiw05h.us-east-2.rds.amazonaws.com',
-
-        'PORT': '5432',
-
     }
+    #
+    # 'postgres' : {
+    #
+    #     'ENGINE': 'django.db.backends.postgresql_psycopg2',
+    #
+    #     'NAME': 'postgres',
+    #
+    #     'USER': 'postgres',
+    #
+    #     'PASSWORD': 'youarewhatyouyeet',
+    #
+    #     'HOST': 'bh.cmmlqfmiw05h.us-east-2.rds.amazonaws.com',
+    #
+    #     'PORT': '5432',
+    #
+    # }
 
 }
 
